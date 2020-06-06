@@ -15,9 +15,9 @@
 
 <body>
 
-<jsp:include page="/WEB-INF/jsp/client/menuClient.jsp"></jsp:include>
+<jsp:include page="/WEB-INF/jsp/header.jsp"></jsp:include>
 
-<div id="framecontent">
+<%-- <div id="framecontent">
 <div class="innertube">
 
 <jsp:include page="/WEB-INF/jsp/client/menuClient.jsp"></jsp:include>
@@ -27,7 +27,7 @@
 
 
 <div id="maincontent">
-<div class="innertube">
+<div class="innertube"> --%>
 <div class="container">
 
 <div class="welcomeBlockH1">
@@ -99,12 +99,12 @@
 
 <div class="row">
 <div class="col">
-<button type="button" class="btn btn-success accbtn"><a href="/client/choix" role="button">Cliquer pour selectionner une pizza</a></button>
+<button type="button" class="btn btn-success accbtn"><a href="/client/choix/" role="button">Cliquer pour selectionner une pizza</a></button>
 </div>
 </div>
 </div>
-</div>
-</div>
+<!-- </div>
+</div> -->
 
 
 

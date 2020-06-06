@@ -12,18 +12,15 @@
 	</head>
 	<body>
 	
-	<div id="framecontent">
-	<div class="innertube">
+	<jsp:include page="/WEB-INF/jsp/header.jsp"></jsp:include>
 	
-	<jsp:include page="/WEB-INF/jsp/client/menuClient.jsp"></jsp:include>
-	
+	<div class="container">	
+
+	<div class="welcomeBlockH1">
+			<h1 class="text-secondary">Paiment</h1>
 	</div>
-	</div>
 	
-	<div id="maincontent">
-	<div class="innertube">
-	
-	<p> Vous aves commandé <b>${nbPizza} pizzas</b> pour un montant total de ${montant}</b></p>
+	<p> Vous avez commandé <b>${nbPizza} pizzas</b> pour un montant total de ${montant}</p>
 	<c:if test = "${SESSION_USER.role.equals(\"USER\")}">
 		<p> Votre fidélité vous accorde une réduction de 10%, votre montant final est de ${montantreduit} </p>
 	</c:if>
@@ -32,22 +29,20 @@
 	
 	<form method="post" action="/client/panier/confirm" >
 		<fieldset>
-				<legend>Carte bleue </legend>
-				<input name="cb" type="checkbox" value="1">
+				<legend>Mode de paiement </legend>
+				<input name="payMode" type="radio" value="1">
 				<legend>Carte MasterCard </legend>
-				<input name="mc" type="checkbox" value="2">
+				<input name="payMode" type="radio" value="2">
 				<legend>PayPal </legend>
-				<input name="pp" type="checkbox" value="3">
-				
+				<input name="payMode" type="radio" value="3">			
 				
 		</fieldset>
-			<fieldset>
-			
-            <input type="submit" name="ok" value="Payer">
-            
-		</fieldset>
-		</form>
 		
-     </div></div>
-	</body>
+			<fieldset>			
+            	<input type="submit" name="ok" value="Payer">         
+			</fieldset>
+	</form>
+		
+   </div>
+</body>
 </html>

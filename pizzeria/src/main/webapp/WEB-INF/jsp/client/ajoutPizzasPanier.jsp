@@ -11,54 +11,48 @@
 		<link href="${jstlCss}" rel="stylesheet" />
 	</head>
 	<body>
-	
-    <div id="framecontent">
-	<div class="innertube">
-	
-	<jsp:include page="/WEB-INF/jsp/client/menuClient.jsp"></jsp:include>
-	
+	<jsp:include page="/WEB-INF/jsp/header.jsp"></jsp:include>
+
+	<div class="container">
+
+	<div class="welcomeBlockH1">
+	<h1 class="text-secondary">Bienvenue sur le site MIAM-MIAM</h1>
 	</div>
-	</div>
-	
-	<div id="maincontent">
-	<div class="innertube">
-	
-	<form method="post" action="/client/panier/add" >
+	<form method="post" action="/client/panier/add" class="mb-5">
 		<fieldset>
 				<legend>Les pizzas</legend>
 				<!-- Itérations des éléments de la carte -->
-				<c:forEach items="${listepizzas}" var="pizza">
-					<fieldset>
-						<b><c:out value="${pizza.libelle}"/></b>
-						<input type="checkbox" name="pizza_${pizza.id}" value="${pizza.id}">
-						<c:out value="(" />
-						
-						<c:forEach items="${pizza.compoIngredient}" var="ing">
-						
-						<c:out value="${ing.nom}, " />
+			<div class="row">
+				<c:forEach items="${listepizzas}" var="pizza" varStatus="theCount">					
+					
+					  <div class="col">
+						  	<figure>
+						 
+						  	<ul>
+							  <li class="contentPizza">
+						  <h2 class="titrePizza"><c:out value="${pizza.libelle}"/></h2>
+							  <input type="checkbox" id="pizza_${pizza.id}" name="pizza_${pizza.id}" value="${pizza.id}" />
+							    <label for="pizza_${pizza.id}"><img src="/images/r${theCount.count}.jpg" alt="${pizza.libelle}" /></label>
+							    <div> Ajouter</div>
+	  						
+						<c:forEach items="${pizza.compoIngredient}" var="ing">							
+							<c:out value="${ing.nom}, " />
 						</c:forEach>
-						<c:out value=")" />
-					</fieldset>	
+							  </li>						  		
+	  						</ul>	  						
+						   </figure>				
+					 </div>
 				</c:forEach>
-					</fieldset>
-			<fieldset>
+			</div>
+				
+			</fieldset>		
 			
-            <input type="submit" name="ok" value="Ajouter au Panier">
-            
-		</fieldset>
-		<fieldset>
-			<!-- Ajout des pizzas selectionnées-->
-			<c:url value="panier/confirm" var="url">
-            </c:url>
-            <!-- <a href="${url}">Valider votre commande</a> -->
-            
-            <!-- Ajout des pizzas selectionnées-->
-			<c:url value="/client/panier/afficher" var="url">
-            </c:url>
-            <!-- <a href="${url}">Afficher votre panier</a>-->
+		<div class="text-center">			
+            	<input type="submit" name="ok" value="Ajouter au Panier" class="btn btn-primary btn-lg" />            
+			</div>
 
-		</fieldset>
 		</form>
-		</div> </div>
+		</div> 
+
 	</body>
 </html>

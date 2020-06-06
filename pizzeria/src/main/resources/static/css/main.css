@@ -3,7 +3,6 @@ body{
 margin: 0;
 padding: 0;
 border: 0;
-overflow: hidden;
 height: 100%; 
 max-height: 100%; 
 }
@@ -143,6 +142,12 @@ figure p{
 	margin:30px 5px;
 	padding:10px;
 }
+.welcomeBlockH1 h1{
+	text-align:center;
+	}
+	fieldset legend{
+	text-align:center;
+	}
 .accbtn{
 	margin: 30px auto;
 	display:block;
@@ -152,3 +157,105 @@ figure p{
 		color:white;
 
 	}
+	/* -------------------------- */
+	
+ul {
+  list-style-type: none;
+}
+
+li {
+  display: inline-block;
+
+}
+.contentPizza{
+	border: 1px solid #f1ecec;
+	padding: 5px;
+	border-radius: 5px;
+    width: 300px;
+    height: 380px;
+}
+input[type="checkbox"][id^="pizza_"] {
+  display: none;
+}
+
+label {
+  border: 1px solid #fff;
+  padding: 10px;
+  display: block;
+  position: relative;
+  margin: 10px;
+  cursor: pointer;
+}
+
+label:before {
+  background-color: white;
+  color: white;
+  content: " ";
+  display: block;
+  border-radius: 50%;
+  border: 1px solid grey;
+  position: absolute;
+  top: -5px;
+  left: -5px;
+  width: 25px;
+  height: 25px;
+  text-align: center;
+  line-height: 28px;
+  transition-duration: 0.4s;
+  transform: scale(0);
+}
+
+label img {
+  height: 200px;
+  width: 200px;
+  transition-duration: 0.2s;
+  transform-origin: 50% 50%;
+}
+
+:checked + label {
+  border-color: #ddd;
+}
+
+:checked + label:before {
+  content: "✓";
+  background-color: grey;
+  transform: scale(1);
+}
+
+:checked + label img {
+  transform: scale(0.9);
+  box-shadow: 0 0 5px #333;
+  z-index: -1;
+} 
+.titrePizza{
+	text-align:center;
+	margin-top:15px;
+}
+.navbar-right{
+	padding:5px;
+}
+.navbar-right ul{
+	list-style-type: none;
+}
+.navbar-right ul li{
+	color:#c0c0c0;
+	
+}
+.navbar-right li a{
+	color:white;
+	margin-right:20px;
+	text-decoration:none;
+}
+.navbar-right li :hover{
+	color:#ffbc77;
+}
+.imgAutoSize{
+    width: 60px;
+    height:60px;
+    object-fit: cover;
+}
+
+.contentTR td{
+vertical-align:middle;
+}	
+}
